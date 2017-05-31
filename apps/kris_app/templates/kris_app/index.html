@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	Hi, Kris! This is my index page.<br>
+	{{dojos}}<br>
+	{% for dojo in dojos %}
+		{{dojo.location}}<br>
+	{% endfor %}
+	Form for creating a Dojo
+	<form action="/dojo/create" method="post">
+	 	{% csrf_token%}
+	 	<!-- <input type="hidden" name="kris_secret" value="it_super_secret"> -->
+		Location:<input type="text" name="location"><br>
+		State:<input type="text" name="state"><br>
+		<input type="submit" value="submit">
+	</form>
+<!-- 	<form action="/form_process" method="post">
+	 	{% csrf_token%}
+		first name:<input type="text" name="first_name"><br>
+		last name:<input type="text" name="last_name"><br>
+		email:<input type="text" name="email"><br>
+		password:<input type="password" name="password"><br>
+		password confirmation<input type="password" name="password_confirmation"><br>
+		<input type="submit" value="submit">
+	</form> -->
+</body>
+</html>
